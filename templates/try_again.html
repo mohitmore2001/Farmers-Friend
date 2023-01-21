@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+
+
+<div class="container py-2 mx-auto my-50 h-10 text-center" style="margin: 9rem;">
+  <div class="row">
+    <div class="col-sm py-2 py-md-3">
+      <div class="card card-body" style="justify-content: center; background-color:blanchedalmond">
+        <h1 class="text-center" style="color:rgb(145, 177, 4); font-size: 20px;"><b>Sorry! please recheck and enter the values right to process your request
+             <br> We request you to please try again</b></h1> <br/>
+             <img src="static\images\Capture.JPG " alt = "Crops", style="width:200px;height:100px;" class="center"> <br/>
+
+
+
+        <a href="{{ url_for('home') }}">
+          <button type="submit" class="btn btn-info text-center" style="
+        color: rgb(56, 58, 48);
+        font-weight: bold;
+        margin: 2rem;">
+            Please Try again! 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

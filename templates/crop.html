@@ -1,0 +1,156 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+
+    html body {
+      background-color: rgb(184, 232, 112);
+  }
+
+  
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Hey! We are happy to see you taking better steps towards your farm!<br/> Scroll to see what we got here!<br/></b>
+  <b>First, Let us see the most suitable crop for your farm</b><br/>
+  <br/>
+  <br/>
+  <img src="static\images\Green_Beds_farmlands_India.jpg " alt = "Crops", style="width:500px;height:400px;" > <br/>
+</h2>
+<br />
+
+<div
+  style="
+    width: 400px;
+    height: 70rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{ url_for('crop_prediction') }}">
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 20px"><b>Nitrogen (0 - 140)</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter a value: "
+        style="font-weight: bold"
+        min = "0"
+        max = "140"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 20px"
+        ><b>Phosphorous (5 - 145)</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "5"
+        max = "145"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 20px"><b>Pottasium (5 - 205)</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "5"
+        max = "205"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="ph" style="font-size: 20px"><b>PH level (2 - 10)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="ph"
+        name="ph"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "2"
+        max = "10"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Rainfall" style="font-size: 20px"><b>Rainfall (in mm) (19 - 300)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Rainfall"
+        name="rainfall"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "19"
+        max = "300"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="humidity" style="font-size: 20px"><b>Humidity level (13 - 100)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="humidity"
+        name="humidity"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "13"
+        max = "100"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="temperature" style="font-size: 20px"><b>Temperature (7 - 45)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="temperature"
+        name="temperature"
+        placeholder="Enter the value: "
+        style="font-weight: bold"
+        min = "7"
+        max = "45"
+        required
+      />
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Form section -->
+
+{% endblock %}
